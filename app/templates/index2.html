@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Community Events Board</title>
+    </head>
+    <body>
+      <h1>Community Events Board</h1>
+      <div class="filters"> -->
+
+        {% for filter in filters %}
+
+        <li>{{ filter.event_name }} - {{ filter.event_date }} - {{ filter.category }}</li>
+
+        {% endfor %}
+
+
+        <button><a href="/">Home</a></button> <br>
+        
+
+    </body>
+</html>

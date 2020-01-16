@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Community Events Board</title>
+    </head>
+    <body>
+      <h1>Community Events Board</h1>
+      <div class="event-list">
+        <ul>
+          {% for event in events %}
+            <li>{{ event.event_name }} - {{ event.event_date }} - {{ event.category }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- set up a form with a post method and results action -->
+      <form method = "post" action = "/results">
+        <!-- need event_name and event_date using two text input (bonus- use date) -->
+        <p>input your event name</p>
+        <input type = "text" name = "event_name"/>
+        <br>
+        <p>input the date of your event</p>
+        <input type = "date" name = "event_date"/>
+        <br>
+        <br>
+
+        <p>Tell me the category of your event</p>
+        <input type="radio" name="category" value="school">school<br>
+        <input type="radio" name="category" value="work">work<br>
+        <input type="radio" name="category" value="personal">personal<br>
+        <input type="radio" name="category" value="social">social<br>
+
+
+        <!-- need submit button -->
+        <input type = "submit" value = "submit"/>
+      </form>
+
+
+      </form>
+
+              <!-- need buttons for the filter page -->
+
+      <form method = "post" action = "/filter">
+        <p>Tell me the categories of your events to filter.</p>
+        <input type="radio" name="filter" value="school">school<br>
+        <input type="radio" name="filter" value="work">work<br>
+        <input type="radio" name="filter" value="personal">personal<br>
+        <input type="radio" name="filter" value="social">social<br>
+
+        <input type = "submit" value = "submit"/>
+      </form>
+
+              <button><a href="/delete">Clear your items</a></button> <br>
+
+
+    </body>
+</html>
